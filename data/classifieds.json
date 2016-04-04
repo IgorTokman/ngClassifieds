@@ -1,9 +1,9 @@
 [
   {
     "id":       1,
-    "title":    "Lorem ipsum",
-    "description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deserunt impedit magni optio quisquam, quos suscipit ut. A ab amet culpa deleniti eum, explicabo illo iure, maxime omnis, possimus quae.",
-    "price":    200,
+    "title":    "Ford Focus",
+    "description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deserunt impedit magni optio quisquam, quos suscipit ut.",
+    "price":    30000,
     "posted":   "2015-10-15",
     "contact":  {
       "name":     "John Smith",
@@ -11,17 +11,16 @@
       "email":    "John@Smith.com"
     },
     "categories":[
-      "Vehicles",
-      "Parts and Accessories"
+      "Automobiles"
     ],
-    "image":    "http://nl.pcmweb.s3-eu-west-1.amazonaws.com/thumbnails/980/024d2/18973951_640.jpg",
+    "image":    "https://im3-tub-ua.yandex.net/i?id=75ad9d25fcf1ce2f6d31bb1deded0194&n=33&h=215&w=337",
     "views":    123
   },
   {
     "id":       2,
-    "title":    "Lorem ipsum",
-    "description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deserunt impedit magni optio quisquam, quos suscipit ut. A ab amet culpa deleniti eum, explicabo illo iure, maxime omnis, possimus quae.",
-    "price":    200,
+    "title":    "Samsung Galaxy S6",
+    "description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deserunt impedit magni optio quisquam, quos suscipit ut.",
+    "price":    800,
     "posted":   "2015-10-15",
     "contact":  {
       "name":     "John Smith",
@@ -29,17 +28,16 @@
       "email":    "John@Smith.com"
     },
     "categories":[
-      "Vehicles",
-      "Parts and Accessories"
+      "Mobile Phones"
     ],
-    "image":    "http://nl.pcmweb.s3-eu-west-1.amazonaws.com/thumbnails/980/024d2/18973951_640.jpg",
+    "image":    "http://4.bp.blogspot.com/-mo2ZhsQD-p4/VHCv1b-S5VI/AAAAAAAAAWk/7zNWn5JdnuA/s1600/First-rumors-for-Samsung-Galaxy-S6%2B%2B.jpg",
     "views":    123
   },
   {
     "id":       3,
-    "title":    "Lorem ipsum",
-    "description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deserunt impedit magni optio quisquam, quos suscipit ut. A ab amet culpa deleniti eum, explicabo illo iure, maxime omnis, possimus quae.",
-    "price":    200,
+    "title":    "Mp3 player",
+    "description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deserunt impedit magni optio quisquam, quos suscipit ut.",
+    "price":    100,
     "posted":   "2015-10-15",
     "contact":  {
       "name":     "John Smith",
@@ -47,62 +45,7 @@
       "email":    "John@Smith.com"
     },
     "categories":[
-      "Vehicles",
-      "Parts and Accessories"
-    ],
-    "image":    "http://nl.pcmweb.s3-eu-west-1.amazonaws.com/thumbnails/980/024d2/18973951_640.jpg",
-    "views":    123
-  },
-  {
-    "id":       4,
-    "title":    "Lorem ipsum",
-    "description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deserunt impedit magni optio quisquam, quos suscipit ut. A ab amet culpa deleniti eum, explicabo illo iure, maxime omnis, possimus quae.",
-    "price":    200,
-    "posted":   "2015-10-15",
-    "contact":  {
-      "name":     "John Smith",
-      "phone":    "+1234567890",
-      "email":    "John@Smith.com"
-    },
-    "categories":[
-      "Vehicles",
-      "Parts and Accessories"
-    ],
-    "image":    "http://nl.pcmweb.s3-eu-west-1.amazonaws.com/thumbnails/980/024d2/18973951_640.jpg",
-    "views":    123
-  },
-  {
-    "id":       5,
-    "title":    "Lorem ipsum",
-    "description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deserunt impedit magni optio quisquam, quos suscipit ut. A ab amet culpa deleniti eum, explicabo illo iure, maxime omnis, possimus quae.",
-    "price":    200,
-    "posted":   "2015-10-15",
-    "contact":  {
-      "name":     "John Smith",
-      "phone":    "+1234567890",
-      "email":    "John@Smith.com"
-    },
-    "categories":[
-      "Vehicles",
-      "Parts and Accessories"
-    ],
-    "image":    "http://nl.pcmweb.s3-eu-west-1.amazonaws.com/thumbnails/980/024d2/18973951_640.jpg",
-    "views":    123
-  },
-  {
-    "id":       6,
-    "title":    "Lorem ipsum",
-    "description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deserunt impedit magni optio quisquam, quos suscipit ut. A ab amet culpa deleniti eum, explicabo illo iure, maxime omnis, possimus quae.",
-    "price":    200,
-    "posted":   "2015-10-15",
-    "contact":  {
-      "name":     "John Smith",
-      "phone":    "+1234567890",
-      "email":    "John@Smith.com"
-    },
-    "categories":[
-      "Vehicles",
-      "Parts and Accessories"
+      "Music"
     ],
     "image":    "http://nl.pcmweb.s3-eu-west-1.amazonaws.com/thumbnails/980/024d2/18973951_640.jpg",
     "views":    123

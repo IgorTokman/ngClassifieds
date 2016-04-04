@@ -2,8 +2,8 @@
 
     "use strict";
 
-    angular
-        .module("ngClassifieds")
+    angular.module("ngClassifieds")
+        //Loads data from a file by using the http service
         .factory("classifiedsFactory", function ($http) {
 
             function getClassifieds(){
