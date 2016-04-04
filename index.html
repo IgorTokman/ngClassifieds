@@ -7,7 +7,30 @@
     <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.min.css" media="all">
     <link rel="stylesheet" href="css/style.css" media="all">
 </head>
-<body ng-app="ngClassifieds">
+<body ng-app="ngClassifieds" ng-controller="classifiedsCtrl">
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <p><strong>Classified</strong></p>
+            <md-button>
+                <md-icon class="mdi mdi-plus-circle"></md-icon>
+                New Classified
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-content class="md-padding" layout="row" layout-wrap>
+        <md-card flex="20">
+            <img src="{{ classified.url }}" alt="">
+            <md-card-content>
+                <div class="classified-info">
+                    <h2 class="md-title">{{ classified.title }}</h2>
+                    <h3>{{ classified.price }}</h3>
+                    <p>{{ classified.desc }}</p>
+                </div>
+            </md-card-content>
+        </md-card>
+    </md-content>
 
 
     <script src="node_modules/angular/angular.js"></script>

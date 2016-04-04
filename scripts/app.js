@@ -2,4 +2,10 @@
  * Created by igortokman on 03.04.16.
  */
 angular
-    .module("ngClassifieds", []);
+    .module("ngClassifieds", ["ngMaterial"])
+    .config(function($mdThemingProvider) {
+
+        $mdThemingProvider.theme('default')
+            .primaryPalette('teal')
+            .accentPalette('orange')
+    });
