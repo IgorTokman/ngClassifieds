@@ -29,23 +29,23 @@
             <form>
                 <md-input-container>
                     <label for="title">Title</label>
-                    <input type="text" id="title" md-autofocus>
+                    <input type="text" id="title" md-autofocus ng-model="classified.title">
                 </md-input-container>
                 <md-input-container>
                     <label for="price">Price</label>
-                    <input type="text" id="price">
+                    <input type="text" id="price" ng-model="classified.price">
                 </md-input-container>
                 <md-input-container>
-                    <label for="desc">Description</label>
-                    <textarea type="text" id="desc">
+                    <label for="description">Description</label>
+                    <textarea type="text" id="description" ng-model="classified.description">
                     </textarea>
                 </md-input-container>
                 <md-input-container>
                     <label for="image">Image Link</label>
-                    <input type="text" id="image">
+                    <input type="text" id="image" ng-model="classified.image">
                 </md-input-container>
-                <md-button class="md-primary">Save</md-button>
-                <md-button class="md-primary">Save Edit</md-button>
+                <md-button class="md-primary" ng-if="!editing" ng-click="saveClassified(classifieds)">Save</md-button>
+                <md-button class="md-primary" ng-if="editing" ng-click="saveEdit()">Save Edit</md-button>
                 <md-button class="md-warn" ng-click="closeSidebar()">Cancel</md-button>
             </form>
         </md-content>
@@ -59,7 +59,7 @@
                 <div class="classified-info" ng-hide="showContact">
                     <h2 class="md-title">{{ classified.title}}</h2>
                     <h3>{{ classified.price | currency }}</h3>
-                    <p>{{ classified.desc }}</p>
+                    <p>{{ classified.description }}</p>
                 </div>
 
                 <div class="classified-contact" ng-show="showContact">
@@ -79,7 +79,7 @@
                 <div class="classified-admin" ng-if="showAdmin">
                     <h3>Admin</h3>
                     <div layout="row">
-                        <md-button class="md-primary">Edit</md-button>
+                        <md-button ng-click="editClassified(classified)" class="md-primary">Edit</md-button>
                         <md-button class="md-warn">Delete</md-button>
                     </div>
                 </div>

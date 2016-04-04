@@ -4,17 +4,57 @@
 
     angular
         .module("ngClassifieds")
-        .controller("classifiedsCtrl", function($scope, $http, classifiedsFactory, $mdSidenav){
+        .controller("classifiedsCtrl", function($scope, $http, classifiedsFactory, $mdSidenav, $mdToast){
 
             classifiedsFactory.getClassifieds().then(function (classifieds) {
                 $scope.classifieds = classifieds.data;
             });
 
+            var contact = {
+                "name":     "John Smith",
+                "phone":    "+1234567890",
+                "email":    "John@Smith.com"
+            }
+
             $scope.openSidebar = function(){
                 $mdSidenav("left").open();
             }
+
             $scope.closeSidebar = function(){
                 $mdSidenav("left").close();
+            }
+
+            $scope.saveClassified = function(classified){
+                if(classified) {
+                    $scope.classified.contact = contact;
+                    $scope.classifieds.push($scope.classified);
+                    $scope.classified = {};
+                    $scope.closeSidebar();
+                    showToast("Classified Saved");
+                }
+            }
+
+            $scope.editClassified = function(classified){
+                $scope.editing = true;
+                $scope.openSidebar();
+                $scope.classified = classified;
+
+            }
+
+            $scope.saveEdit = function(){
+                $scope.editing = true;
+                $scope.classified = {};
+                $scope.closeSidebar();
+                showToast("Edit saved");
+            }
+
+            function showToast(message){
+                $mdToast.show(
+                    $mdToast.simple()
+                        .content(message)
+                        .position('top, right')
+                        .hideDelay(3000)
+                );
             }
         });
 })();
