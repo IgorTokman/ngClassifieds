@@ -31,7 +31,10 @@
             $scope.$on('newClassified',function (event, classified) {
                 classified.id = classified.length + 1;
                 vm.saveClassified(classified);
-            })
+            });
+            $scope.$on('editClassified',function (event, message) {
+                showToast(message);
+            });
 
             //Contact data that attaches to every card
             var contact = {
@@ -63,10 +66,10 @@
 
             //Edits the selected classified
             function editClassified(classified){
-                vm.editing = true;
-                openSidebar();
-                vm.classified = classified;
-
+                $state.go("classifieds.edit", {
+                        id: classified.id,
+                        classified: classified
+                    });
             }
 
             //Saves the changes in the selected classified
