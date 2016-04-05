@@ -4,14 +4,12 @@
 
     angular.module("ngClassifieds")
         //Loads data from a file by using the http service
-        .factory("classifiedsFactory", function ($http) {
+        .factory("classifiedsFactory", function ($http, $firebaseArray) {
 
-            function getClassifieds(){
-                return $http.get("data/classifieds.json");
-            }
+            var ref =  new Firebase("https://ngappclassifieds.firebaseio.com/");
 
             return{
-                getClassifieds: getClassifieds
+               ref: $firebaseArray(ref)
             }
         })
 })();

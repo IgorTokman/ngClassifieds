@@ -2,7 +2,7 @@
  * Created by igortokman on 03.04.16.
  */
 angular
-    .module("ngClassifieds", ["ngMaterial", "ui.router"])
+    .module("ngClassifieds", ["ngMaterial", "ui.router", "firebase"])
     .config(function($mdThemingProvider, $stateProvider) {
         //Changes the view
         $mdThemingProvider.theme('default')
