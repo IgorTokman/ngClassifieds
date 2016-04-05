@@ -6,10 +6,26 @@
         .module("ngClassifieds")
         //The main app controller
         .controller("classifiedsCtrl", function($scope, $http, classifiedsFactory, $mdSidenav, $mdToast, $mdDialog){
+
+            var vm = this;
+
+            vm.classifieds;
+            vm.classified;
+            vm.categories;
+            vm.editing;
+
+            vm.openSidebar = openSidebar;
+            vm.closeSidebar = closeSidebar;
+            vm.saveClassified = saveClassified;
+            vm.editClassified = editClassified;
+            vm.saveEdit = saveEdit;
+            vm.deleteClassified = deleteClassified;
+
+
             //Deferred result object
             classifiedsFactory.getClassifieds().then(function (classifieds) {
-                $scope.classifieds = classifieds.data;
-                $scope.categories = getCategories($scope.classifieds);
+                vm.classifieds = classifieds.data;
+                vm.categories = getCategories(vm.classifieds);
             });
             
             //Contact data that attaches to every card
@@ -20,44 +36,44 @@
             }
 
             //Shows the sidebar
-            $scope.openSidebar = function(){
+            function openSidebar(){
                 $mdSidenav("left").open();
             }
 
             //Hides the sidebar
-            $scope.closeSidebar = function(){
+            function closeSidebar(){
                 $mdSidenav("left").close();
             }
 
             //Creates the new classified
-            $scope.saveClassified = function(classified){
+            function saveClassified(classified){
                 if(classified) {
-                    $scope.classified.contact = contact;
-                    $scope.classifieds.push($scope.classified);
-                    $scope.classified = {};
-                    $scope.closeSidebar();
+                    classified.contact = contact;
+                    vm.classifieds.push(classified);
+                    vm.classified = {};
+                    closeSidebar();
                     showToast("Classified Saved");
                 }
             }
 
             //Edits the selected classified
-            $scope.editClassified = function(classified){
-                $scope.editing = true;
-                $scope.openSidebar();
-                $scope.classified = classified;
+            function editClassified(classified){
+                vm.editing = true;
+                openSidebar();
+                vm.classified = classified;
 
             }
 
             //Saves the changes in the selected classified
-            $scope.saveEdit = function(){
-                $scope.editing = false;
-                $scope.classified = {};
-                $scope.closeSidebar();
+            function saveEdit(){
+                vm.editing = false;
+                vm.classified = {};
+                closeSidebar();
                 showToast("Edit saved");
             }
 
             //Deletes the selected card from classified array
-            $scope.deleteClassified = function(event, classified){
+            function deleteClassified(event, classified){
                 var confirm = $mdDialog
                     .confirm()
                     .title("Are you sure you want to delete " + classified.title + "?")
@@ -66,8 +82,8 @@
                     .targetEvent(event);
                 //Deferred result object
                 $mdDialog.show(confirm).then(function(){
-                    var index = $scope.classifieds.indexOf(classified);
-                    $scope.classifieds.splice(index, 1);
+                    var index = vm.classifieds.indexOf(classified);
+                    vm.classifieds.splice(index, 1);
                 }, function(){});
             }
 
