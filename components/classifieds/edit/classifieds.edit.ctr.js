@@ -4,13 +4,13 @@
 
     angular
         .module("ngClassifieds")
-        .controller("editClassifiedsCtrl", function ($state, $scope, $mdSidenav, $mdDialog, $timeout) {
+        .controller("editClassifiedsCtrl", function ($state, $scope, $mdSidenav, $mdDialog, $timeout, classifiedsFactory) {
 
             var vm = this;
-            vm.classified = $state.params.classified;
+            vm.classifieds = classifiedsFactory.ref;
             vm.closeSidebar = closeSidebar;
             vm.saveEdit= saveEdit;
-
+            vm.classified = vm.classifieds.$getRecord($state.params.id);
 
             $timeout(function () {
                 $mdSidenav("left").open();
@@ -24,8 +24,10 @@
             })
 
             function saveEdit(){
-                $scope.$emit('editClassified', "Edit saved");
-                vm.sidenavOpen = false;
+                vm.classifieds.$save(vm.classified).then(function () {
+                    $scope.$emit('editClassified', "Edit saved");
+                    vm.sidenavOpen = false;
+                });
             }
 
             function closeSidebar() {
