@@ -5,7 +5,7 @@
     angular
         .module("ngClassifieds")
         //The main app controller
-        .controller("classifiedsCtrl", function($scope, $http, classifiedsFactory, $mdSidenav, $mdToast, $mdDialog){
+        .controller("classifiedsCtrl", function($scope, $state, $http, classifiedsFactory, $mdSidenav, $mdToast, $mdDialog){
 
             var vm = this;
 
@@ -37,7 +37,7 @@
 
             //Shows the sidebar
             function openSidebar(){
-                $mdSidenav("left").open();
+                $state.go("classifieds.new")
             }
 
             //Hides the sidebar
