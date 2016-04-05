@@ -27,7 +27,12 @@
                 vm.classifieds = classifieds.data;
                 vm.categories = getCategories(vm.classifieds);
             });
-            
+
+            $scope.$on('newClassified',function (event, classified) {
+                classified.id = classified.length + 1;
+                vm.saveClassified(classified);
+            })
+
             //Contact data that attaches to every card
             var contact = {
                 "name":     "John Smith",
